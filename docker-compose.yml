@@ -6,8 +6,8 @@ services:
   redis:
     container_name: redis
     image: 'redis:latest'
-  server:
-    container_name: server
+  api:
+    container_name: api
     build:
       dockerfile: Dockerfile.dev
       context: ./server
