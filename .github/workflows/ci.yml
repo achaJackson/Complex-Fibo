@@ -44,12 +44,11 @@ jobs:
 
 #run test on image
       - name: Build and test docker image
-        uses: docker/docker-run-action@v2
+        uses: docker/docker-run-action@v3
         with:
           image: ${{secrets.DOCKER_ID}}/${{matrix.IMAGE_NAME}}-latest
-          options: -- --coverage
-          run: |
-            npm test
+          options: -v ${{ github.workspace }}:/work
+          run: npm test -- --coverege
 
 #build and push docker images
       - name: Build and push Docker image
