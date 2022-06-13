@@ -1,0 +1,17 @@
+#install from a base image
+FROM node:14-alpine
+
+#set the container working directory
+WORKDIR /app
+
+#copy the depencies file
+COPY ./package*.json ./
+
+#install dependencies on the container
+RUN npm install
+
+#copy the rest of the files
+COPY ./ ./
+
+#start the container
+CMD ["npm", "run", "start"]
