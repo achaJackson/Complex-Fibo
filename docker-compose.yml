@@ -46,4 +46,4 @@ services:
       context: ./worker
     volumes:
       - /worker/node_modules
-      - ./worker
+      - ./worker:/worker
