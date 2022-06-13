@@ -1,0 +1,13 @@
+FROM node:14-alpine
+
+RUN cd usr && mkdir server
+
+WORKDIR /server
+
+COPY ./package*.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+CMD ["npm" , "run", "start"]
