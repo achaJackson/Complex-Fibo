@@ -38,7 +38,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./client
-          file: Dockerfile
+          file: dockerfile.dev
           push: false
           tags: ${{secrets.DOCKER_ID}}/${{matrix.IMAGE_NAME}}-latest
 
@@ -55,7 +55,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./client
-          file: Dockerfile
+          file: dockerfile
           push: true
           tags: ${{secrets.DOCKER_ID}}/${{matrix.IMAGE_NAME}}-app
 
